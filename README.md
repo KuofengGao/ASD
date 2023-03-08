@@ -59,7 +59,7 @@ python ASD.py --config config/baseline_asd.yaml --resume latest_model.pt --gpu 0
 
 ```
 @inproceedings{gao2023asd,
-  title={Invisible backdoor attack with sample-specific triggers},
+  title={Backdoor Defense via Adaptively Splitting Poisoned Dataset},
   author={Gao, Kuofeng and Bai, Yang and Gu, Jindong and Yang, Yong and Xia, Shu-Tao},
   booktitle={CVPR},
   year={2023}
