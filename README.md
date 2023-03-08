@@ -10,8 +10,6 @@ In this work, we summarize the training-time defenses from a unified framework a
 <div align=center>
 <img src="assets/pipeline_cvpr.png" width="800" height="400" alt="Pipeline of ASD"/><br/>
 </div>
-&nbsp;
-&nbsp;
 
 ## Installation
 
