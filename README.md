@@ -52,7 +52,7 @@ We provide pretrained models [here](./storage/baseline_asd/checkpoint).
 Run the following command to test our ASD under BadNets attack.
 
 ```shell
-python ASD.py --config config/baseline_asd.yaml --resume latest_model.pt --gpu 0
+python test.py --config config/baseline_asd.yaml --resume latest_model.pt --gpu 0
 ```
 
 ## Citation
