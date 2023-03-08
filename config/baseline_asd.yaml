@@ -1,0 +1,96 @@
+---
+seed:
+  seed: 100
+  deterministic: False
+  benchmark: True
+dataset_dir: /data/gaokuofeng/datasets/cifar-10-batches-py
+num_classes: 10
+saved_dir: ./saved_data
+storage_dir: ./storage
+prefetch: True  # turn on prefetch mode will speedup io
+transform:
+  pre: null
+  train:
+    primary:
+      random_crop:
+        size: 32
+        padding: 4
+        padding_mode: reflect
+      random_horizontal_flip:
+        p: 0.5
+    remaining:
+      to_tensor: True
+      normalize:
+        mean: [0.4914, 0.4822, 0.4465]
+        std: [0.2023, 0.1994, 0.2010]
+  test:
+    primary: null
+    remaining:
+      to_tensor: True
+      normalize:
+        mean: [0.4914, 0.4822, 0.4465]
+        std: [0.2023, 0.1994, 0.2010]
+backdoor:
+  poison_ratio: 0.05
+  target_label: 3
+  badnets:
+    trigger_path: ./data/trigger/cifar_1.png
+loader:
+  batch_size: 128
+  num_workers: 4
+  pin_memory: True
+
+split:
+  criterion:
+    sce:
+      alpha: 0.1
+      beta: 1
+      num_classes: 10
+
+semi:
+  loader:
+    batch_size: 64
+    num_workers: 4
+    pin_memory: True
+  criterion:
+    mixmatch:
+      lambda_u: 15  
+      rampup_length: 120  # same as num_epochs
+  mixmatch:
+    train_iteration: 1024
+    temperature: 0.5
+    alpha: 0.75
+    num_classes: 10
+
+network:
+  resnet18_cifar:
+    num_classes: 10
+sync_bn: True  # synchronized batch normalization
+
+optimizer:
+  Adam:
+    lr: 0.002
+lr_scheduler: null
+num_epochs: 120
+
+criterion:
+  cross_entropy:
+    reduction: "mean"
+
+global:
+  epoch_first: 60
+  epoch_second: 90
+  epoch_third: 120
+  seed_num: 10
+  epsilon: 0.5
+  t: 5
+  n: 10
+
+meta:
+  optimizer:
+    Adam:
+      lr: 0.015
+  criterion:
+    cross_entropy:
+      reduction: "mean"
+  epoch: 1
