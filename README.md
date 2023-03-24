@@ -1,6 +1,6 @@
 # Backdoor Defense via Adaptively Splitting Poisoned Dataset
 
-This repository provides the pytorch implementatin of our CVPR 2023 work: Backdoor Defense via Adaptively Splitting Poisoned Dataset.
+This repository provides the pytorch implementatin of our CVPR 2023 work: [Backdoor Defense via Adaptively Splitting Poisoned Dataset](https://arxiv.org/abs/2303.12993).
 
 ## Abstract
 
