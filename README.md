@@ -58,10 +58,11 @@ python test.py --config config/baseline_asd.yaml --resume latest_model.pt --gpu 
 ## Citation
 
 ```
-@inproceedings{gao2023asd,
+@inproceedings{gao2023backdoor,
   title={Backdoor Defense via Adaptively Splitting Poisoned Dataset},
   author={Gao, Kuofeng and Bai, Yang and Gu, Jindong and Yang, Yong and Xia, Shu-Tao},
-  booktitle={CVPR},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={4005--4014},
   year={2023}
 }
 ```
